@@ -13,12 +13,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import br.com.issuenet.model.beans.implementacao.state.TarefaState;
-
 @Entity(name="tarefa")
 @Table(name="tarefa", schema="puc")
 public class TarefaBean implements Serializable {
-
+	
 	/**
 	 * 
 	 */
@@ -39,7 +37,7 @@ public class TarefaBean implements Serializable {
 	private String materia;
 	
 	@ManyToOne
-	@JoinColumn(name="id_usuario")
+	@JoinColumn(name="id_tutor")
 	public UsuarioBean tutor;
 	
 	@Column(name="data_criacao")
@@ -63,14 +61,16 @@ public class TarefaBean implements Serializable {
 	private Date dataLimiteAvaliacao;
 	
 	@Column(name="status")
-	private TarefaState status;
+	private String status;
 	
 	@Column(name="nota_final")
 	private double notaFinal;
 	
-	@ManyToOne
-	@JoinColumn(name="id_criterio_avaliacao")
-	private CriterioAvaliacaoBean criterioAvaliacao;
+	//@ManyToOne
+	//@JoinColumn(name="id_criterio_avaliacao")
+	//private CriterioAvaliacaoBean criterioAvaliacao;
+	
+	
 	
 	
 	public static long getSerialversionuid() {
@@ -137,10 +137,10 @@ public class TarefaBean implements Serializable {
 	public void setDataLimiteAvaliacao(Date dataLimiteAvaliacao) {
 		this.dataLimiteAvaliacao = dataLimiteAvaliacao;
 	}
-	public TarefaState getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(TarefaState status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public double getNotaFinal() {
@@ -149,10 +149,11 @@ public class TarefaBean implements Serializable {
 	public void setNotaFinal(double notaFinal) {
 		this.notaFinal = notaFinal;
 	}
-	public CriterioAvaliacaoBean getCriterioAvaliacao() {
+	
+/*	public CriterioAvaliacaoBean getCriterioAvaliacao() {
 		return criterioAvaliacao;
 	}
 	public void setCriterioAvaliacao(CriterioAvaliacaoBean criterioAvaliacao) {
 		this.criterioAvaliacao = criterioAvaliacao;
-	}
+	}*/
 }
