@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,7 +38,8 @@ public class TarefaBean implements Serializable {
 	@Column(name="materia")
 	private String materia;
 	
-	@Column(name="id_tutor", columnDefinition="int")
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
 	public UsuarioBean tutor;
 	
 	@Column(name="data_criacao")
@@ -65,8 +68,10 @@ public class TarefaBean implements Serializable {
 	@Column(name="nota_final")
 	private double notaFinal;
 	
-	@Column(name="id_criterio_avaliacao", columnDefinition="int")
+	@ManyToOne
+	@JoinColumn(name="id_criterio_avaliacao")
 	private CriterioAvaliacaoBean criterioAvaliacao;
+	
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
