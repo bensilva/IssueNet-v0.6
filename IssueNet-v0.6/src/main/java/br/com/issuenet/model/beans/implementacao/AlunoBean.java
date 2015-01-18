@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity(name="aluno")
 @Table(name="aluno", schema="puc")
-public class AlunoBean extends UsuarioBean implements Serializable {
+public class AlunoBean implements Serializable {
 
 	/**
 	 * 
@@ -21,6 +21,6 @@ public class AlunoBean extends UsuarioBean implements Serializable {
 	public AlunoBean()
 	{
 		super();
-		this.perfil="Aluno";
+//		this.perfil="Aluno";
 	}
 }

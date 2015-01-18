@@ -66,9 +66,9 @@ public class TarefaBean implements Serializable {
 	@Column(name="nota_final")
 	private double notaFinal;
 	
-	//@ManyToOne
-	//@JoinColumn(name="id_criterio_avaliacao")
-	//private CriterioAvaliacaoBean criterioAvaliacao;
+	@ManyToOne
+	@JoinColumn(name="id_criterio_avaliacao")
+	private CriterioAvaliacaoBean criterioAvaliacao;
 	
 	
 	
@@ -150,10 +150,10 @@ public class TarefaBean implements Serializable {
 		this.notaFinal = notaFinal;
 	}
 	
-/*	public CriterioAvaliacaoBean getCriterioAvaliacao() {
+	public CriterioAvaliacaoBean getCriterioAvaliacao() {
 		return criterioAvaliacao;
 	}
 	public void setCriterioAvaliacao(CriterioAvaliacaoBean criterioAvaliacao) {
 		this.criterioAvaliacao = criterioAvaliacao;
-	}*/
+	}
 }

@@ -1,1 +1,1 @@
-<a href="index.jsp">Página inicial</a>
+<a href="main.jsp">Página inicial</a>

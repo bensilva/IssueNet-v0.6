@@ -2,12 +2,9 @@ package br.com.issuenet.model.beans.implementacao;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity(name="professor")
-@Table(name="professor",schema="puc")
-public class ProfessorBean extends UsuarioBean implements Serializable {
+/*@Entity(name="professor")
+@Table(name="professor",schema="puc")*/
+public class ProfessorBean implements Serializable {
 
 	/**
 	 * 
@@ -18,9 +15,9 @@ public class ProfessorBean extends UsuarioBean implements Serializable {
 		return serialVersionUID;
 	}
 	
-	public ProfessorBean() {
+/*	public ProfessorBean() {
 		super();
-		this.perfil = "Professor";
-	}
+//		this.perfil = "Professor";
+	}*/
 
 }

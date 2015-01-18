@@ -1,23 +1,22 @@
 import java.io.Serializable;
 import java.util.Date;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-import br.com.issuenet.model.beans.implementacao.ProfessorBean;
+import br.com.issuenet.model.beans.implementacao.CriterioAvaliacaoBean;
 import br.com.issuenet.model.beans.implementacao.TarefaBean;
 import br.com.issuenet.model.beans.implementacao.UsuarioBean;
 import br.com.issuenet.model.dao.util.GenericDAO;
-import br.com.issuenet.model.dao.util.HibernateUtil;
 
 
 public class TarefaBeanTeste {
 
 	public static void main(String[] args) {
 		
-		UsuarioBean tutor = new ProfessorBean();
+		UsuarioBean tutor = new UsuarioBean();
+		CriterioAvaliacaoBean criterioAvaliacao = new CriterioAvaliacaoBean();
 		
 		tutor.setIdUsuario(1);
+		criterioAvaliacao.setIdCriterioAvaliacao(1);
+		criterioAvaliacao.setProfessor(tutor);
 		
 		
 		TarefaBean tarefa = new TarefaBean();
@@ -25,7 +24,7 @@ public class TarefaBeanTeste {
 		tarefa.setNomeTarefa("Nome da Tarefa");
 		tarefa.setDescricao("Descrição da tarefa");
 		tarefa.setMateria("Nome da matéria");
-		tarefa.setTutor(tutor);
+		tarefa.setTutor(null);
 		tarefa.setDataCriacao(new Date());
 		tarefa.setDataLimiteResolucao(new Date());
 		tarefa.setDataResolvida(new Date());
@@ -33,7 +32,7 @@ public class TarefaBeanTeste {
 		tarefa.setDataLimiteAvaliacao(new Date());
 		tarefa.setStatus("Aberta");
 		tarefa.setNotaFinal(9.4);
-		
+		tarefa.setCriterioAvaliacao(null);
 		
 		Serializable s = tarefa;
 		

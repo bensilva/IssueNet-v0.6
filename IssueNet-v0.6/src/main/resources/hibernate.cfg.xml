@@ -29,5 +29,6 @@
 		<mapping class="br.com.issuenet.model.beans.implementacao.TarefaBean"></mapping>
 		<mapping class="br.com.issuenet.model.beans.implementacao.CriterioAvaliacaoBean"></mapping>
 		<mapping class="br.com.issuenet.model.beans.implementacao.UsuarioBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.ProfessorBean"></mapping>
 	</session-factory>
 </hibernate-configuration>

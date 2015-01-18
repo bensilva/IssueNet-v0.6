@@ -23,6 +23,12 @@ public class GenericDAO {
 		session.update(s);
 		commitSession(session);
 	}
+	
+	public static void genericDelete(Serializable s) {
+		Session session = createSession();
+		session.delete(s);
+		commitSession(session);
+	}
 
 	private static Session createSession() {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
