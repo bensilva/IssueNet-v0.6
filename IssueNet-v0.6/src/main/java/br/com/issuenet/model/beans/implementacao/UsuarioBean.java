@@ -20,22 +20,28 @@ public class UsuarioBean implements Serializable
 	@Id
 	@GeneratedValue
 	@Column(name="id_usuario")
-	protected int idUsuario;
+	private int idUsuario;
 	
 	@Column(name="nome")
-	protected String nome;
+	private String nome;
 	
 	@Column(name="matricula")
-	protected String matricula;
+	private String matricula;
 	
 	@Column (name="email")
-	protected String email; 
+	private String email; 
 	
 	@Column (name="senha")
-	protected String senha; 
+	private String senha; 
 	
 	@Column (name="perfil")
-	protected String perfil;
+	private String perfil;
+	
+	@Column (name="comportamento_resolvedor")
+	private String comportamentoResolvedor;
+	
+	@Column (name="comportamento_gerenciador")
+	private String comportamentoGerenciador;
 	
 	/*Metodo construtor padrao*/
 	
@@ -89,5 +95,17 @@ public class UsuarioBean implements Serializable
 	}
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
+	}	
+	public String getComportamentoResolvedor() {
+		return comportamentoResolvedor;
+	}
+	public void setComportamentoResolvedor(String comportamentoResolvedor) {
+		this.comportamentoResolvedor = comportamentoResolvedor;
+	}
+	public String getComportamentoGerenciador() {
+		return comportamentoGerenciador;
+	}
+	public void setComportamentoGerenciador(String comportamentoGerenciador) {
+		this.comportamentoGerenciador = comportamentoGerenciador;
 	}
 }

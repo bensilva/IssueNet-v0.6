@@ -7,7 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 public class GenericDAO {
-	public static void genericSave(Serializable s) {
+	public static String genericSave(Serializable s) {
+		String msg = "";
 		Session session = createSession();		
 		try{
 		session.save(s);
@@ -15,7 +16,9 @@ public class GenericDAO {
 		}catch(HibernateException e){
 			session.getTransaction().rollback();
 			e.printStackTrace();
+			msg = e.toString();
 		}
+		return msg;
 	}
 	
 	public static void genericUpdate(Serializable s) {

@@ -11,7 +11,7 @@ public class TurmaAlunoBean implements Serializable
 	private static final long serialVersionUID = 1L;
 	private int idTurmaAluno;
 	private TurmaBean turma;
-	private AlunoBean aluno;
+	private UsuarioBean aluno;
 	/**/
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -29,10 +29,10 @@ public class TurmaAlunoBean implements Serializable
 	public void setTurma(TurmaBean turma) {
 		this.turma = turma;
 	}
-	public AlunoBean getAluno() {
+	public UsuarioBean getAluno() {
 		return aluno;
 	}
-	public void setAluno(AlunoBean aluno) {
+	public void setAluno(UsuarioBean aluno) {
 		this.aluno = aluno;
 	}
 }

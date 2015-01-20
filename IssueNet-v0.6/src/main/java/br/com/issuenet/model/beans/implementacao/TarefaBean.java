@@ -38,7 +38,11 @@ public class TarefaBean implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name="id_tutor")
-	public UsuarioBean tutor;
+	private UsuarioBean tutor;
+	
+	@ManyToOne
+	@JoinColumn(name="resolvido_por")
+	private UsuarioBean resolvidoPor;
 	
 	@Column(name="data_criacao")
 	@Temporal(TemporalType.DATE)
@@ -69,7 +73,6 @@ public class TarefaBean implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="id_criterio_avaliacao")
 	private CriterioAvaliacaoBean criterioAvaliacao;
-	
 	
 	
 	
@@ -106,6 +109,12 @@ public class TarefaBean implements Serializable {
 	}
 	public void setTutor(UsuarioBean tutor) {
 		this.tutor = tutor;
+	}
+	public UsuarioBean getResolvidoPor() {
+		return resolvidoPor;
+	}
+	public void setResolvidoPor(UsuarioBean resolvidoPor) {
+		this.resolvidoPor = resolvidoPor;
 	}
 	public Date getDataCriacao() {
 		return dataCriacao;
