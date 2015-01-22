@@ -16,7 +16,7 @@ public class TarefaBeanTeste {
 		
 		tutor.setIdUsuario(1);
 		criterioAvaliacao.setIdCriterioAvaliacao(1);
-		criterioAvaliacao.setProfessor(tutor);
+		criterioAvaliacao.setResponsavel(tutor);
 		
 		
 		TarefaBean tarefa = new TarefaBean();

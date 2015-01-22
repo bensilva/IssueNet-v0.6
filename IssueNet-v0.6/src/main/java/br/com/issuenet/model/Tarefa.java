@@ -2,7 +2,6 @@ package br.com.issuenet.model;
 
 import java.util.Date;
 
-import br.com.issuenet.model.beans.implementacao.CriterioAvaliacaoBean;
 import br.com.issuenet.model.beans.implementacao.TarefaBean;
 
 public class Tarefa {
@@ -20,7 +19,7 @@ public class Tarefa {
 	private Date dataInicioAvaliacao;
 	private Date dataLimiteAvaliacao;	
 	private double notaFinal;
-	private CriterioAvaliacaoBean criterioAvaliacao;
+	private CriterioAvaliacao criterioAvaliacao;
 	private ITarefaState statusAtual = new TarefaStateAberta();
 	private ITarefaState statusAberta = new TarefaStateAberta();
 	private ITarefaState statusExpirada = new TarefaStateExpirada();
@@ -127,12 +126,12 @@ public class Tarefa {
 		this.notaFinal = notaFinal;
 		this.tarefaBean.setNotaFinal(notaFinal);
 	}
-	public CriterioAvaliacaoBean getCriterioAvaliacao() {
+	public CriterioAvaliacao getCriterioAvaliacao() {
 		return criterioAvaliacao;
 	}
-	public void setCriterioAvaliacao(CriterioAvaliacaoBean criterioAvaliacao) {
+	public void setCriterioAvaliacao(CriterioAvaliacao criterioAvaliacao) {
 		this.criterioAvaliacao = criterioAvaliacao;
-		this.tarefaBean.setCriterioAvaliacao(criterioAvaliacao);
+		this.tarefaBean.setCriterioAvaliacao(criterioAvaliacao.getCriterioAvaliacaoBean());
 	}
 	public ITarefaState getStatusAtual() {
 		return statusAtual;

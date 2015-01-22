@@ -24,15 +24,16 @@ public class CriterioAvaliacaoBean implements Serializable {
 	@Column(name="id_criterio_avaliacao")
 	private int idCriterioAvaliacao;
 	
+	@ManyToOne
+	@JoinColumn(name="id_responsavel")
+	private UsuarioBean responsavel;
+	
 	@Column(name="descricao")
 	private String descricao;
 	
 	@Column(name="forma_calculo")
-	private String formaCalculo;
-	
-	@ManyToOne
-	@JoinColumn(name="responsavel")
-	private UsuarioBean professor;
+	private String formaCalculo;	
+
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -56,10 +57,10 @@ public class CriterioAvaliacaoBean implements Serializable {
 	public void setFormaCalculo(String formaCalculo) {
 		this.formaCalculo = formaCalculo;
 	}
-	public UsuarioBean getProfessor() {
-		return professor;
+	public UsuarioBean getResponsavel() {
+		return responsavel;
 	}
-	public void setProfessor(UsuarioBean professor) {
-		this.professor = professor;
+	public void setResponsavel(UsuarioBean responsavel) {
+		this.responsavel = responsavel;
 	}
 }

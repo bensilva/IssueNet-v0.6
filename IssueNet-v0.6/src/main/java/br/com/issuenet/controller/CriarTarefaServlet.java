@@ -55,6 +55,10 @@ public class CriarTarefaServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		tarefa.setCriterioAvaliacao(Manager.recuperarCriterioAvaliacao(
+				Integer.parseInt(request.getParameter("criterioAvaliacao"))));
+		//tarefa.setCriterioAvaliacao(Manager.recuperarCriterioAvaliacao(1));
+		
 		String msg = Manager.salvarTarefa(tarefa);
 		
 		request.setAttribute("msgStatus", msg);

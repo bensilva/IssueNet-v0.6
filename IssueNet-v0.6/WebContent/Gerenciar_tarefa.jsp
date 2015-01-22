@@ -15,12 +15,11 @@
 		                      
                             
 							<div class="form-group">
-								<label for="sel1" class="col-lg-3 control-label">Tipo de Tarefa:</label>
+								<label for="sel1" class="col-lg-3 control-label">Criterio de Avaliação:</label>
 								<div class="col-lg-6">
-									<select class="form-control" id="sel1">
-										<option>Hibernate</option>
-										<option>JSF</option>
-										<option>CSS/Bootstrap</option>
+									<select class="form-control" id="sel1" name="criterioAvaliacao">
+										<option value="1">Média Ponderada</option>
+										<option value="2">Média Aritmética</option>
 									</select>
 								</div>
 							</div>
@@ -104,7 +103,7 @@
 						</div>
 						
 						
-						
+					</div>	
 					</fieldset>
 				</form>
 			</DIV><!-- Container -->
