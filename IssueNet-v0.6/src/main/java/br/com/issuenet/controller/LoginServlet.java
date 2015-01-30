@@ -38,7 +38,12 @@ public class LoginServlet extends HttpServlet {
 			httpSession.setAttribute("usuarioLogado", usuario);
 			jsp = "tela_principal.jsp";
 		}
-				
+		
+		httpSession.setAttribute("tarefasEmResolucao", usuario.getComportamentoGerenciador().listaTarefasEmResolucao(usuario));
+		httpSession.setAttribute("tarefasEmAvaliacao", usuario.getComportamentoGerenciador().listaTarefasEmAvaliacao(usuario));
+		httpSession.setAttribute("tarefasAvaliadas", usuario.getComportamentoGerenciador().listaTarefasAvaliadas(usuario));
+		httpSession.setAttribute("tarefasFinalizadas", usuario.getComportamentoGerenciador().listaTarefasFinalizadas(usuario));
+		
 		RequestDispatcher view = request.getRequestDispatcher(jsp);
 		view.forward(request, response);
 		

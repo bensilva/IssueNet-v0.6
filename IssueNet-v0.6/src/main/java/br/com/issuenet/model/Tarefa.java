@@ -1,5 +1,6 @@
 package br.com.issuenet.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import br.com.issuenet.model.beans.implementacao.TarefaBean;
@@ -11,8 +12,9 @@ public class Tarefa {
 	private String nomeTarefa;
 	private String descricao;
 	private String materia;
-	public Usuario tutor;
-	public Usuario resolvidoPor;
+	private Usuario tutor;
+	private ArrayList<Usuario> resolvedores;
+	private Usuario resolvidoPor;
 	private Date dataCriacao;
 	private Date dataLimiteResolucao;
 	private Date dataResolvida;
@@ -32,15 +34,36 @@ public class Tarefa {
 			this.tarefaBean.setStatus(this.statusAtual.getStatusString());
 	}
 	
-/*	public Tarefa(TarefaBean tarefaBean, Usuario tutor){
+	public Tarefa(TarefaBean tarefaBean){
 		this.tarefaBean = tarefaBean;
 		this.idTarefa = tarefaBean.getIdTarefa();
 		this.nomeTarefa = tarefaBean.getNomeTarefa();
 		this.descricao = tarefaBean.getDescricao();
 		this.materia = tarefaBean.getMateria();
-		this.tutor = tutor;
-		
-	}*/
+		this.tutor = new Usuario(tarefaBean.getTutor());
+		this.resolvedores = Manager.listaResolvedores(tarefaBean);
+		this.resolvidoPor = new Usuario(tarefaBean.getResolvidoPor());
+		this.dataCriacao = tarefaBean.getDataCriacao();
+		this.dataLimiteResolucao = tarefaBean.getDataLimiteResolucao();
+		this.dataResolvida = tarefaBean.getDataResolvida();
+		this.dataInicioAvaliacao = tarefaBean.getDataInicioAvaliacao();
+		this.dataLimiteAvaliacao = tarefaBean.getDataLimiteAvaliacao();
+		this.notaFinal = tarefaBean.getNotaFinal();
+		this.criterioAvaliacao = new CriterioAvaliacao(tarefaBean.getCriterioAvaliacao());		
+		if(tarefaBean.getStatus().equals("Aberta")){
+			this.statusAtual = new TarefaStateAberta();
+		}else if(tarefaBean.getStatus().equals("Expirada")){
+			this.statusAtual = new TarefaStateExpirada();
+		}else if(tarefaBean.getStatus().equals("EmAvaliacao")){
+			this.statusAtual = new TarefaStateEmAvaliacao();
+		}else if(tarefaBean.getStatus().equals("Avaliada")){
+			this.statusAtual = new TarefaStateAvaliada();
+		}else if(tarefaBean.getStatus().equals("Finalizada")){
+			this.statusAtual = new TarefaStateFinalizada();
+		}else if(tarefaBean.getStatus().equals("Cancelada")){
+			this.statusAtual = new TarefaStateCancelada();
+		}		
+	}
 	
 	public int getIdTarefa() {
 		return idTarefa;
@@ -160,6 +183,12 @@ public class Tarefa {
 	}
 	public TarefaBean getTarefaBean() {
 		return tarefaBean;
+	}
+	public ArrayList<Usuario> getResolvedores() {
+		return resolvedores;
+	}
+	public void setResolvedores(ArrayList<Usuario> resolvedores) {
+		this.resolvedores = resolvedores;
 	}
 	
 }

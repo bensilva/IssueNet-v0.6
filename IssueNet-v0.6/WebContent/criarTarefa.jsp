@@ -1,64 +1,102 @@
-<%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@include file="header.jsp"%>
+<%@include file="navegacao.jsp"%>
+<div class="container-fluid">
+	<div class="bg-primary ">
+		<form class="form-horizontal" role="form">
+			<fieldset>
+				<!-- Form Name -->
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Criar Tarefa</h3>
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="nomeTarefa">
+						Nome da Tarefa : </label>
+					<div class="col-md-6">
+						<input id="nomeTarefa" name="nomeTarefa" placeholder=""
+							class="form-control input-md" type="text" />
+					</div>
+				</div>
 
-<html>
-<head>
-<%@include file="head.jsp"%>
-</head>
-<body>
+				<!-- Textarea -->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="descricao">Descrição
+						: </label>
+					<div class="col-md-6">
+						<textarea class="form-control" id="descricao" name="descricao">Descreva os dados da tarefa que deseja cadastrar.</textarea>
+					</div>
+				</div>
 
-	<h1 align="center">Criar Tarefa</h1>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="materia">Matéria
+						: </label>
+					<div class="col-md-6">
+						<input id="materia" name="materia" placeholder="Matéria"
+							class="form-control input-md" type="text">
+					</div>
+				</div>
 
-	<form method="post" action="CriarTarefa.do">
+				<!-- Select Basic -->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="tutor">Tutor : </label>
+					<div class="col-md-6">
+						<select id="tutor" name="tutor" class="form-control">
+							<option value="-">Selecione um tutor</option>
+							<option value="1">Option one</option>
+							<option value="2">Option two</option>
+						</select>
+					</div>
+				</div>
 
-		<p>Preencha os dados da tarefa:</p>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="dataLimiteResolucao">Data
+						Limite Resolução : </label>
+					<div class="col-md-6">
+						<input id="dataLimiteResolucao" name="dataLimiteResolucao"
+							placeholder="Informe a data limite da resolução."
+							class="form-control input-md" required="required" type="text">
+					</div>
+				</div>
 
-		<table style="width: 500px">
-			<tr>
-				<td>
-				Título: <input type="text" name="nomeTarefa" value=""
-					maxlength="100" size="40" />
-					
-				<br><br>				
-				Descrição:<br>
-				<textarea rows="5" cols="30" name="descricao"></textarea>
-				
-				<br><br>
-				Matéria: <input type="text" name="materia">
-				
-				<br><br>
-				Tutor: <select name="tutor" size="1">
-					<option value=""></option>
-					<option value="1">Tatiana</option>
-				</select>
-				
-				<br><br>
-				<%-- Data da criação: <%=new Date().toString() %> --%>
-				
-				<br><br>
-				Data limite para resolução: <input type="text" class="date" name="dataLimiteResolucao" /> dd/mm/aaaa
-				
-				<br><br>
-				Data para início da avaliação: <input type="text" class="date" name="dataInicioAvaliacao" /> dd/mm/aaaa
-				
-				<br><br>
-				Data limite para avaliação: <input type="text" class="date" name="dataLimiteAvaliacao" /> dd/mm/aaaa
-				
-				<br><br>
-				Status: Incompleta
-				
-				</td>
-			</tr>
-		</table>
-		<br>
-		<center>
-			<input type="SUBMIT">
-		</center>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="dataInicioAvaliacao">Data
+						de Inicio da Avaliação : </label>
+					<div class="col-md-6">
+						<input id="dataInicioAvaliacao" name="dataInicioAvaliacao"
+							placeholder="Informe a data de início da resolução"
+							class="form-control input-md" required="required" type="text">
+					</div>
+				</div>
 
-	</form>
-	<br></br>
-	<%@include file="foot.jsp"%>
-</body>
-</html>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-3 control-label" for="dataLimiteavaliacao">Data
+						Limite da Avaliação :</label>
+					<div class="col-md-6">
+						<input id="dataLimiteavaliacao" name="dataLimiteavaliacao"
+							placeholder="Informe a data limite da resolução"
+							class="form-control input-md" required="required" type="text">
+
+					</div>
+				</div>
+
+				<!-- Button (Double) -->
+				<div class="form-group">
+					<div class="col-md-offset-5">
+						<button id="cancelar" name="cancelar"
+							class="btn btn-default btn-sm">Cancelar</button>
+						<button id="criar" name="criar" class="btn btn-success btn-success.focus">Criar
+							Tarefa</button>
+					</div>
+				</div>
+
+			</fieldset>
+		</form>
+	</div>
+</div>
+<%@include file="trailer.jsp"%>

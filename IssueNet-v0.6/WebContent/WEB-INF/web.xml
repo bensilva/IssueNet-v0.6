@@ -24,4 +24,12 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ResolverTarefa</servlet-name>
+    <servlet-class>br.com.issuenet.controller.ResolverTarefaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResolverTarefa</servlet-name>
+    <url-pattern>/ResolverTarefa.do</url-pattern>
+  </servlet-mapping>
 </web-app>

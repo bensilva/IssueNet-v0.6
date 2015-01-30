@@ -2,22 +2,54 @@ package br.com.issuenet.model.beans.implementacao;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity(name="questao")
+@Table(name="questao", schema="puc")
 public class QuestaoBean implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	/**/
-	private String nomeQuestao;
-	private String descricao;
-	private double peso;
-	private ModeloCriterioAvaliacaoBean modeloCriterioAvaliacaoBean;
-	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	/*Métodos de acesso*/
+	/**
+	 * 
+	 */
+
+	/**/
+	@Id
+	@GeneratedValue
+	@Column(name="id_questao")
+	private int idQuestao;
+	
+	@ManyToOne
+	@JoinColumn(name="id_questionario_fk")
+	private QuestionarioBean questionarioBean;
+	
+	@Column(name="nome_questao")
+	private String nomeQuestao;
+	
+	@Column(name="descricao")
+	private String descricao;
+	
+	@Column(name="peso")
+	private double peso;	
+	/**/
+	
+	public int getIdQuestao() {
+		return idQuestao;
+	}
+
+	public void setIdQuestao(int idQuestao) {
+		this.idQuestao = idQuestao;
+	}
+	
 	public String getNomeQuestao() {
 		return nomeQuestao;
 	}
@@ -42,12 +74,12 @@ public class QuestaoBean implements Serializable {
 		this.peso = peso;
 	}
 
-	public ModeloCriterioAvaliacaoBean getModeloCriterioAvaliacaoBean() {
-		return modeloCriterioAvaliacaoBean;
+	public QuestionarioBean getQuestionarioBean() {
+		return questionarioBean;
 	}
 
-	public void setModeloCriterioAvaliacaoBean(
-			ModeloCriterioAvaliacaoBean modeloCriterioAvaliacaoBean) {
-		this.modeloCriterioAvaliacaoBean = modeloCriterioAvaliacaoBean;
+	public void setQuestionarioBean(
+			QuestionarioBean questionarioBean) {
+		this.questionarioBean = questionarioBean;
 	}
 }

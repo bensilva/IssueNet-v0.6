@@ -26,8 +26,18 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
 		<!-- mapping file, we can use Bean annotations too -->
-		<mapping class="br.com.issuenet.model.beans.implementacao.TarefaBean"></mapping>
+		
+		<mapping class="br.com.issuenet.model.beans.implementacao.AvaliacaoBean"></mapping>
 		<mapping class="br.com.issuenet.model.beans.implementacao.CriterioAvaliacaoBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.QuestaoBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.QuestionarioAvaliacaoBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.QuestionarioBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.TarefaBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.TurmaBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.TurmaUsuarioBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.UsuarioAvaliacaoBean"></mapping>
 		<mapping class="br.com.issuenet.model.beans.implementacao.UsuarioBean"></mapping>
+		<mapping class="br.com.issuenet.model.beans.implementacao.UsuarioTarefaBean"></mapping>
+		
 	</session-factory>
 </hibernate-configuration>

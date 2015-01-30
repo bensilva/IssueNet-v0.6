@@ -5,45 +5,37 @@ import br.com.issuenet.model.beans.implementacao.UsuarioBean;
 
 public class Usuario {
 
-	private UsuarioBean usuarioBean;
-	
+	private UsuarioBean usuarioBean;	
 	private int idUsuario;
-
 	private String nome;
-
 	private String matricula;
-
-	private String email; 
-
-	private String senha; 
-
+	private String email;
+	private String senha;
 	private String perfil;
-
 	private IComportamentoResolvedor comportamentoResolvedor;
-
-	private IComportamentoGerenciador comportamentoGerenciador;
-
-	
+	private IComportamentoGerenciador comportamentoGerenciador;	
 	
 	public Usuario(){};
 	
 	public Usuario(UsuarioBean usuarioBean){
-		this.usuarioBean = usuarioBean;
-		this.idUsuario = usuarioBean.getIdUsuario();
-		this.nome = usuarioBean.getNome();
-		this.matricula = usuarioBean.getMatricula();
-		this.email = usuarioBean.getEmail();
-		this.senha = usuarioBean.getSenha();
-		this.perfil = usuarioBean.getPerfil();
-		if(usuarioBean.getComportamentoGerenciador().equals("PodeGerenciar")){
-			this.comportamentoGerenciador = new PodeGerenciar();
-		}else{
-			this.comportamentoGerenciador = new NaoPodeGerenciar();
-		}
-		if(usuarioBean.getComportamentoResolvedor().equals("PodeResolverTarefa")){
-			this.comportamentoResolvedor = new PodeResolverTarefa();
-		}else{
-			this.comportamentoResolvedor = new NaoPodeResolverTarefa();
+		if(usuarioBean != null){
+			this.usuarioBean = usuarioBean;
+			this.idUsuario = usuarioBean.getIdUsuario();
+			this.nome = usuarioBean.getNome();
+			this.matricula = usuarioBean.getMatricula();
+			this.email = usuarioBean.getEmail();
+			this.senha = usuarioBean.getSenha();
+			this.perfil = usuarioBean.getPerfil();
+			if(usuarioBean.getComportamentoGerenciador().equals("PodeGerenciar")){
+				this.comportamentoGerenciador = new PodeGerenciar();
+			}else{
+				this.comportamentoGerenciador = new NaoPodeGerenciar();
+			}
+			if(usuarioBean.getComportamentoResolvedor().equals("PodeResolverTarefa")){
+				this.comportamentoResolvedor = new PodeResolverTarefa();
+			}else{
+				this.comportamentoResolvedor = new NaoPodeResolverTarefa();
+			}
 		}
 	}
 	

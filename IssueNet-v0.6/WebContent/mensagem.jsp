@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<%@include file="head.jsp"%>
+<%@include file="header.jsp"%>
 </head>
 <body>
 	<h1 align="center">Resultado</h1>
@@ -11,6 +11,6 @@
 		<%=request.getAttribute("msgStatus")%>
 
 		<br></br>
-		<%@include file="foot.jsp"%>
+		<%@include file="trailer.jsp"%>
 </body>
 </html>

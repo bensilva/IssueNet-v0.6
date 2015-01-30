@@ -11,8 +11,8 @@ public class GenericDAO {
 		String msg = "";
 		Session session = createSession();		
 		try{
-		session.save(s);
-		commitSession(session);
+			session.save(s);
+			commitSession(session);
 		}catch(HibernateException e){
 			session.getTransaction().rollback();
 			e.printStackTrace();
@@ -21,10 +21,18 @@ public class GenericDAO {
 		return msg;
 	}
 	
-	public static void genericUpdate(Serializable s) {
+	public static String genericUpdate(Serializable s) {
+		String msg = "";
 		Session session = createSession();		
-		session.update(s);
-		commitSession(session);
+		try{
+			session.update(s);
+			commitSession(session);
+		}catch(HibernateException e){
+			session.getTransaction().rollback();
+			e.printStackTrace();
+			msg = e.toString();
+		}
+		return msg;
 	}
 	
 	public static void genericDelete(Serializable s) {

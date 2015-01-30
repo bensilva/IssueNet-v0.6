@@ -16,11 +16,13 @@ public class CriterioAvaliacao {
 	private String formaCalculo;	
 
 	public CriterioAvaliacao(CriterioAvaliacaoBean criterioAvaliacaoBean) {
-		this.criterioAvaliacaoBean = criterioAvaliacaoBean;
-		this.idCriterioAvaliacao = criterioAvaliacaoBean.getIdCriterioAvaliacao();
-		this.descricao = criterioAvaliacaoBean.getDescricao();
-		this.formaCalculo = criterioAvaliacaoBean.getFormaCalculo();
-		this.responsavel = criterioAvaliacaoBean.getResponsavel();
+		if(criterioAvaliacaoBean != null){
+			this.criterioAvaliacaoBean = criterioAvaliacaoBean;
+			this.idCriterioAvaliacao = criterioAvaliacaoBean.getIdCriterioAvaliacao();
+			this.descricao = criterioAvaliacaoBean.getDescricao();
+			this.formaCalculo = criterioAvaliacaoBean.getFormaCalculo();
+			this.responsavel = criterioAvaliacaoBean.getResponsavel();
+		}
 	}
 	
 	

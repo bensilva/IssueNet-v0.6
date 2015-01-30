@@ -21,18 +21,18 @@ public class TarefaBeanTeste {
 		
 		TarefaBean tarefa = new TarefaBean();
 		
-		tarefa.setNomeTarefa("Nome da Tarefa");
-		tarefa.setDescricao("Descrição da tarefa");
+		tarefa.setNomeTarefa("Nome da Tarefa2");
+		tarefa.setDescricao("Descrição da tarefa2");
 		tarefa.setMateria("Nome da matéria");
-		tarefa.setTutor(null);
+		tarefa.setTutor(tutor);
 		tarefa.setDataCriacao(new Date());
 		tarefa.setDataLimiteResolucao(new Date());
-		tarefa.setDataResolvida(new Date());
+		//tarefa.setDataResolvida(new Date());
 		tarefa.setDataInicioAvaliacao(new Date());
 		tarefa.setDataLimiteAvaliacao(new Date());
 		tarefa.setStatus("Aberta");
-		tarefa.setNotaFinal(9.4);
-		tarefa.setCriterioAvaliacao(null);
+		//tarefa.setNotaFinal(9.4);
+		//tarefa.setCriterioAvaliacao(null);
 		
 		Serializable s = tarefa;
 		

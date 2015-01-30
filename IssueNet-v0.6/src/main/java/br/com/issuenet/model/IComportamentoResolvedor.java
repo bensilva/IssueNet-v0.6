@@ -4,6 +4,6 @@ public interface IComportamentoResolvedor {
 	
 	public String getComportamento();
 	
-	public void resolverTarefa();
+	public void resolverTarefa(Tarefa t);
 
 }
