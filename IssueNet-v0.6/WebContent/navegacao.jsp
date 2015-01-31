@@ -1,7 +1,5 @@
 <%@include file="header.jsp"%>
-
-
-<div class="navbar navbar-default">
+<div class="navbar navbar-inverse">
 	<div class="navbar-header">
 		<a class="navbar-brand" href="tela_principal.jsp">IssueNet v1.0</a>
 	</div>
@@ -13,7 +11,7 @@
 				data-toggle="dropdown">Gerenciar <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li><a href="gerenciarTarefa.jsp">Tarefa</a></li>
-					<li><a href="#">Usuario</a></li>
+					<li><a href="gerenciarUsuario.jsp">Usuario</a></li>
 					<li><a href="#">Grupo de Trabalho</a></li>
 					<li><a href="#">Turma</a></li>
 					<li class="divider"></li>

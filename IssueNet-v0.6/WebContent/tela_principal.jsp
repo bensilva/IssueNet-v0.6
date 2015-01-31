@@ -1,19 +1,19 @@
 <%@include file="header.jsp"%>
+<%-- <%@include file="navegacao.jsp"%> --%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.*"%>
 <%@page import="br.com.issuenet.model.*"%>
-<body>
 
 	<nav class="navbar ">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">IssueNet</a>
+				<a href="tela_principal.jsp" class="navbar-brand">IssueNet</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="tela_principal.jsp">HOME</a></li>
+<!-- 				<li><a href="tela_principal.jsp">HOME</a></li> -->
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gerenciar</a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Usuário</a></li>
+						<li><a href="gerenciarUsuario.jsp">Usuário</a></li>
 						<li><a href="#">Turma</a></li>
 						<li><a href="Gerenciar_tarefa.jsp">Tarefa</a></li>
 						<li><a href="#">Grupo de Trabalho</a></li>

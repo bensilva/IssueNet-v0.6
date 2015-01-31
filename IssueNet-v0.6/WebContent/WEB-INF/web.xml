@@ -32,4 +32,12 @@
     <servlet-name>ResolverTarefa</servlet-name>
     <url-pattern>/ResolverTarefa.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>CriarUsuario</servlet-name>
+    <servlet-class>br.com.issuenet.controller.CriarUsuarioServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CriarUsuario</servlet-name>
+    <url-pattern>/CriarUsuario.do</url-pattern>
+  </servlet-mapping>
 </web-app>

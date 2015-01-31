@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession httpSession = request.getSession();
+		System.out.println(request.getParameter("email")+" -- "+request.getParameter("senha"));
 		Usuario usuario = Manager.recuperarUsuario(request.getParameter("email"), request.getParameter("senha"));
 		
 		String msg = "";
@@ -38,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 			httpSession.setAttribute("usuarioLogado", usuario);
 			jsp = "tela_principal.jsp";
 		}
+		
 		
 		httpSession.setAttribute("tarefasEmResolucao", usuario.getComportamentoGerenciador().listaTarefasEmResolucao(usuario));
 		httpSession.setAttribute("tarefasEmAvaliacao", usuario.getComportamentoGerenciador().listaTarefasEmAvaliacao(usuario));

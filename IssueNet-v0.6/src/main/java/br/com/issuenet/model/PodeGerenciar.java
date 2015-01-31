@@ -112,4 +112,9 @@ public class PodeGerenciar implements IComportamentoGerenciador {
 		return tarefas;
 	}
 
+	@Override
+	public String salvar(Usuario usuario) {
+		return Manager.salvarUsuario(usuario);
+	}
+
 }

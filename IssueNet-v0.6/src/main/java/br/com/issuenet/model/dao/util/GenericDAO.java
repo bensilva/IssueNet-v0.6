@@ -12,6 +12,7 @@ public class GenericDAO {
 		Session session = createSession();		
 		try{
 			session.save(s);
+			//msg = s.getClass().getSimpleName() + "salvo com sucesso.";
 			commitSession(session);
 		}catch(HibernateException e){
 			session.getTransaction().rollback();
