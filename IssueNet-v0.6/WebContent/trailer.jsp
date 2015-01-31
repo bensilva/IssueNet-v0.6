@@ -23,14 +23,7 @@
 				'//www.google-analytics.com/analytics.js', 'ga');
 		ga('create', 'UA-40413119-1', 'bootply.com');
 		ga('send', 'pageview');
-	</script> <!-- Verificar como fazer o envio dos campos do formulário para o servlet -->
-	<script>
-		function enviaForm() {
-			var form = document.getElementById("loginFrm");
-			alert(document.attributes.getNamedItem("login").nodeValue());
-			alert(form.getAttribute("passwd"));
-			form.submit();
-		}
-	</script> <!-- Fim Configurações de script bootstrap -->
+	</script>
+	   <!-- Fim Configurações de script bootstrap -->
 </body>
 </html>

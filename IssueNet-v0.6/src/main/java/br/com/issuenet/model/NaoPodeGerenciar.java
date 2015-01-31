@@ -117,4 +117,10 @@ public class NaoPodeGerenciar implements IComportamentoGerenciador {
 		return tarefas;
 	}
 
+	@Override
+	public String salvar(Usuario usuario) {
+		//TODO Faz nada...
+		return null;
+	}
+
 }

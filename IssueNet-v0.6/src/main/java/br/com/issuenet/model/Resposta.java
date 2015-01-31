@@ -47,5 +47,5 @@ public class Resposta {
 	}
 	public RespostaBean getRespostaBean() {
 		return respostaBean;
-	}	
+	}
 }

@@ -5,7 +5,7 @@ import br.com.issuenet.model.beans.implementacao.UsuarioBean;
 
 public class Usuario {
 
-	private UsuarioBean usuarioBean;	
+	private UsuarioBean usuarioBean = new UsuarioBean();	
 	private int idUsuario;
 	private String nome;
 	private String matricula;

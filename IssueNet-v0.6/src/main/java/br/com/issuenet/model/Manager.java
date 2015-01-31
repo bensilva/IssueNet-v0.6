@@ -86,4 +86,13 @@ public class Manager {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public static String salvarUsuario(Usuario u) {
+		String msg = GenericDAO.genericSave(u.getUsuarioBean());
+		if(msg.equals("")){
+			return "Usuário incluído com sucesso!";
+		}else{
+			return msg;
+		}
+	}
 }

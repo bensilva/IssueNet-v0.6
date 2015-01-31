@@ -85,7 +85,7 @@
 
 				<div class="form-group">
 					<div class="col-md-offset-5">
-						<button class="btn btn-default btn-sm">Cancelar</button>
+						<button type="reset" class="btn btn-default btn-sm">Cancelar</button>
 						<button type="submit" class="btn btn-success btn-success.focus">Salvar</button>
 					</div>
 				</div>

@@ -24,7 +24,9 @@ public class CriaAvaliacaoTest {
 		
 		GenericDAO.genericSave(questionarioAvaliacaoBean);
 		
-		System.out.println("Questionario avaliação criado com sucesso.");
+		System.out.println("Questionario avaliação criado com sucesso...");
+		
+		
 
 	}
 

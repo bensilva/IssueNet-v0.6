@@ -15,4 +15,6 @@ public interface IComportamentoGerenciador {
 	public List<Tarefa> listaTarefasEmAvaliacao(Usuario usuario);
 	public List<Tarefa> listaTarefasAvaliadas(Usuario usuario);
 	public List<Tarefa> listaTarefasFinalizadas(Usuario usuario);
+
+	public String salvar(Usuario usuario);
 }
